@@ -1,5 +1,5 @@
 #pega o maior e menor nivel, junto com a quantidade de jogadores que estão nos nivel.
-
+#python .\maior_nivel.py .\wowah_data.csv --output resultado
 from mrjob.job import MRJob
 import numpy as np
 
@@ -7,7 +7,7 @@ class MRMaxLevel(MRJob):
     def mapper(self, _, line):
         columns = line.split(",")
         level = int(columns[1].strip())
-        key = "Level:"
+        key = "Result:"
         yield key, (level, 1)
 
 
